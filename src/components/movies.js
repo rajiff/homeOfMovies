@@ -1,12 +1,18 @@
-import renderMovie from './movie';
+import Movie from './movie';
 
-export default function (movieColln) {
-	let movieRenderStr = '';
-	movieColln.forEach((movie) => {
-		movieRenderStr += renderMovie(movie);
-	});
+export default class MovieColln {
+  constructor(movieColln) {
+    this.movieColln = movieColln;
+  }
 
-	let moviesDiv = document.createElement('div');
-  moviesDiv.innerHTML = movieRenderStr;
-  return moviesDiv;
+  render() {
+    let movieRenderStr = '';
+    this.movieColln.forEach((movie) => {
+      movieRenderStr += Movie.render(movie);
+    });
+
+    let moviesDiv = document.createElement('div');
+    moviesDiv.innerHTML = movieRenderStr;
+    return moviesDiv;
+  }
 }

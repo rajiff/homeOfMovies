@@ -1,6 +1,6 @@
 import renderWelcome from './welcome';
 import feedback from './components/feedback';
-import movies from './components/movies';
+import MovieColln from './components/movies';
 
 function render() {
   return `
@@ -22,4 +22,4 @@ let movieColln = [
   { title: 'Movie-2', description: 'Movie-TWO' },
   { title: 'Movie-3', description: 'Movie-THREE' }
 ];
-document.getElementById('movies').appendChild(movies(movieColln));
+document.getElementById('movies').appendChild(new MovieColln(movieColln).render());
