@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path');
 
 module.exports = {
@@ -9,13 +10,12 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    rules: [{
-      test: /\.(html)$/,
-      use: {
-        loader: 'html-loader'
-      }
-    }]
+    rules: []
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      title: 'AppTemplate',
+      template: './src/index.html'
+    })
   ]
 };
