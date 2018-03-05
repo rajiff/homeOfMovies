@@ -1,19 +1,28 @@
 function render() {
-	return `
+  return `
 		<section>
 			<h2>Feedback</h2>
 			<form>
 				<div>
-					Username: <input type="text" name="user">
+					<input id="emailAddress" type="email">
 				</div>
-				<div>
-					Password: <input type="password" name="pwd">
+				<div style='margin: 10px;'>
+					<span>
+						<input type="radio" name="sex" value="male">
+						Male
+					</span>
+					<span>
+						<input type="radio" name="sex" value="female">
+						Female
+					</span>
 				</div>
-				<div>
-					<input type="radio" name="sex" value="male">Male<br> <input type="radio" name="sex" value="female">Female
-				</div>
-				<div>
-					<input type="checkbox" name="vehicle" value="Bike">I have a bike<br> <input type="checkbox" name="vehicle" value="Car">I have a car <br> 
+				<div style='margin: 10px;'>
+					<span>
+						<input type="checkbox" name="vehicle" value="Bike">I have a bike
+					</span>
+					<span>
+						<input type="checkbox" name="vehicle" value="Car">I have a car
+					</span>
 				</div>
 				<div>
 					<input type="submit" value="Submit">
@@ -23,4 +32,8 @@ function render() {
 	`;
 }
 
-document.getElementById('app').appendChild(document.createElement(render()));
+export default function feedback() {
+  let feedbackDiv = document.createElement('div');
+  feedbackDiv.innerHTML = render();
+  return feedbackDiv;
+}
