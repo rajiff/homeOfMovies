@@ -1,0 +1,19 @@
+{
+  "globals":
+  {
+    "document": true
+  },
+  "env":
+  {
+    "es6": true
+  },
+  "parserOptions":
+  {
+    "sourceType": "module"
+  },
+  "rules":
+  {
+    "eqeqeq": "error"
+  },
+  "extends": "eslint:recommended"
+}
